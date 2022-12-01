@@ -1,3 +1,11 @@
 :root {
-  ---navbar-color: #000;
+  /* For body related colors */
+  --body-base-font-size: "";
+
+  /* For Navbar related colors */
+  --navbar-width: "";
+  --navbar-bg-color: "";
+  --navbar-text-color: "";
+  --navbar-text-hover-color: "";
+  --navbar-text-size: "";
 }
