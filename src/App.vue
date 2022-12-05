@@ -1,11 +1,11 @@
 <template>
   <div class="container-fluid px-0">
-    <d-flex class="flex-nowrap">
-      <Navbar />
-      <div class="main-content">
+    <div class="flex-nowrap d-lg-flex">
+      <Navbar class="main-nav" />
+      <div class="main-content flex-grow-1">
         <router-view />
       </div>
-    </d-flex>
+    </div>
   </div>
 </template>
 <script>
