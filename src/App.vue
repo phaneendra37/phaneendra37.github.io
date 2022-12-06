@@ -1,16 +1,18 @@
 <template>
-  <div class="container-fluid px-0">
-    <div class="flex-nowrap d-lg-flex">
-      <Navbar class="main-nav" />
-      <div class="main-content flex-grow-1">
-        <router-view />
-      </div>
+  <div id="app">
+    <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link>
     </div>
+    <i class="bi bi-x" />
+    <Themes />
+    <router-view />
   </div>
 </template>
 <script>
-import Navbar from "@/components/Navbar.vue";
+import Themes from "@/components/Theme.vue";
 export default {
-  components: { Navbar },
+  name: "AppHeart",
+  components: { Themes },
 };
 </script>

@@ -1,9 +1,11 @@
 :root {
   /* For body related colors */
-  --body-base-font-size: "";
-  --body-bg-color: #f5f8fa;
+  --body-base-font-size: 13px;
   --boy-font-family: "Vazirmatn", sans-serif;
   --font-family-url: "";
+  --border-color: #f4f4f4;
+  --text-color: #181c32;
+  --theme-color: #fff;
   /* For Navbar related colors */
   --navbar-width: 250px;
   --navbar-bg-color: #101012;
@@ -13,9 +15,16 @@
   --navbar-text-size: "";
 }
 @import url("https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap");
+@import url("./icons.css");
 body {
   font-family: var(--boy-font-family) !important;
   background-color: var(--body-bg-color) !important;
+  direction: ltr;
+  color: var(--text-color) !important;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 .navbar-custom {
   color: var(--navbar-text-color) !important;
@@ -56,4 +65,54 @@ body {
 }
 button:focus {
   box-shadow: none !important;
+}
+body .b-sidebar-backdrop {
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+.b-sidebar-header {
+  border-bottom: 1px solid var(--border-color) !important;
+  padding: 14px 16px !important;
+  background-color: var(--theme-color);
+  flex-direction: row-reverse !important;
+}
+.b-sidebar-header .close svg {
+  display: none !important;
+}
+.b-sidebar-header .close {
+  margin-right: 0px !important;
+  margin-left: auto;
+  line-height: 0px !important;
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  color: #747579;
+}
+.b-sidebar-header strong {
+  font-size: 17px !important;
+  font-weight: 600;
+  line-height: 20px !important;
+}
+
+.b-sidebar-header .close::before {
+  display: inline-block;
+  content: "\f62a";
+  font-family: bootstrap-icons !important;
+  font-style: normal;
+  font-weight: normal !important;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: -0.125em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.b-sidebar-body {
+  background-color: var(--theme-color) !important;
+  padding: 1.2rem 1rem !important;
+}
+.sidebar-theme-heading {
+  font-size: calc(var(--body-base-font-size) + 3px);
 }
