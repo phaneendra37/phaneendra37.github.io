@@ -19,16 +19,31 @@
       <b-navbar-nav class="d-flex flex-column mb-auto w-100">
         <!--<router-link to="/" class="nav-link">Home</router-link>-->
         <b-nav-item v-b-toggle.theme>Themes</b-nav-item>
+        <b-nav-item v-b-toggle.Avatar>Avatar</b-nav-item>
       </b-navbar-nav>
     </b-collapse>
     <Theme />
-    <ManageUsers />
+    <span class="text-white">{{ selectedPhoto }}</span>
+    <Avatar @SelctedPhoto="UpdateProfilePath" />
   </b-navbar>
 </template>
 
 <script>
 import Theme from "./Theme.vue";
+import Avatar from "./Avatar.vue";
 export default {
-  components: { Theme },
+  components: { Theme, Avatar },
+  data() {
+    return {
+      selectedPhoto: "",
+    };
+  },
+  methods: {
+    UpdateProfilePath(data) {
+      debugger; //eslint-disable-line
+      console.log(data);
+      this.selectedPhoto = data;
+    },
+  },
 };
 </script>

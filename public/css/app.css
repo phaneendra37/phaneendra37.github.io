@@ -98,7 +98,7 @@ body .b-sidebar-backdrop {
   color: #747579;
 }
 .b-sidebar-header strong {
-  font-size: 17px !important;
+  font-size: calc(var(--body-base-font-size) + 4px) !important;
   font-weight: 600;
   line-height: 20px !important;
 }
