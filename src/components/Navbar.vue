@@ -17,12 +17,12 @@
     ></b-navbar-toggle>
     <b-collapse id="nav-collapse" class="w-100" is-nav>
       <b-navbar-nav class="d-flex flex-column mb-auto w-100">
-        <router-link to="/" class="nav-link">Home</router-link>
-        <router-link to="/about" class="nav-link">About</router-link>
+        <!--<router-link to="/" class="nav-link">Home</router-link>-->
         <b-nav-item v-b-toggle.theme>Themes</b-nav-item>
       </b-navbar-nav>
     </b-collapse>
     <Theme />
+    <ManageUsers />
   </b-navbar>
 </template>
 
