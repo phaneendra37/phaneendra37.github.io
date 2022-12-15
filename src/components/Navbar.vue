@@ -20,19 +20,22 @@
         <!--<router-link to="/" class="nav-link">Home</router-link>-->
         <b-nav-item v-b-toggle.theme>Themes</b-nav-item>
         <b-nav-item v-b-toggle.Avatar>Avatar</b-nav-item>
+        <b-nav-item v-b-toggle.profiledetails>Profile Details</b-nav-item>
       </b-navbar-nav>
     </b-collapse>
     <Theme />
     <span class="text-white">{{ selectedPhoto }}</span>
     <Avatar @SelctedPhoto="UpdateProfilePath" />
+    <ProfileDetails />
   </b-navbar>
 </template>
 
 <script>
 import Theme from "./Theme.vue";
 import Avatar from "./Avatar.vue";
+import ProfileDetails from "./ProfileDetails.vue";
 export default {
-  components: { Theme, Avatar },
+  components: { Theme, Avatar, ProfileDetails },
   data() {
     return {
       selectedPhoto: "",
