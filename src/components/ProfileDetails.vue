@@ -21,7 +21,7 @@
               type="text"
               placeholder="Enter you name"
               required
-              v-model="name"
+              v-model="form.name"
             />
           </b-form-group>
         </b-col>
@@ -32,7 +32,7 @@
               placeholder="Enter your email"
               readonly
               required
-              v-model="email"
+              v-model="form.email"
             />
           </b-form-group>
         </b-col>
@@ -42,7 +42,7 @@
               type="number"
               placeholder="Enter your phone number"
               required
-              v-model="mobile_number"
+              v-model="form.mobile_number"
             />
           </b-form-group>
         </b-col>

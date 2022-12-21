@@ -12,7 +12,7 @@
   /* For Navbar related colors */
   --navbar-width: 250px;
   --navbar-bg-color: #101012;
-  --navbr-padding: 8px 25px;
+  --navbr-padding: 8px 16px;
   --navbar-text-color: #747579;
   --navbar-text-hover-color: "";
   --navbar-text-size: "";
@@ -42,6 +42,7 @@ body [class^="border"] {
 .nav-link {
   padding: var(--navbr-padding) !important;
   line-height: 16px !important;
+  font-size: calc(var(--body-base-font-size) + 3px) !important;
   color: var(--navbar-text-color) !important;
 }
 .main-nav {
@@ -162,6 +163,11 @@ body .border-bottom-dashed {
 .navbar-bg {
   width: var(--navbar-width) !important;
   background-color: var(--navbar-bg-color) !important;
+}
+.btn-dark {
+  background-color: var(--navbar-bg-color) !important;
+  color: var(--navbar-text-color) !important;
+  border-color: var(--navbar-bg-color) !important;
 }
 @media (max-width: 800px) {
   .navbar {
