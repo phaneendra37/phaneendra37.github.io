@@ -4,92 +4,137 @@
     shadow
     title="Customize theme"
     no-close-on-backdrop
-    width="400px"
+    width="450px"
     lazy
     right
   >
-    <div class="border-bottom border-bottom-dashed pb-3 mb-4">
-      <h4 class="mb-1 sidebar-theme-heading">Themes</h4>
-      <p class="mb-0 small text-muted">
-        Help to give a website a unique and stylish look that stands out among
-        the crowd.
+    <div class="border-bottom-dashed border-bottom">
+      <h4 class="theme-name-heading">Layout Themes</h4>
+      <p class="theme-description text-muted">
+        This will change the entire window look and feel as per the user
+        convinience
       </p>
-      <div class="d-flex align-items-center flex-wrap mt-3">
+      <div class="my-3 d-flex flex-wrap">
         <div
-          class="color-pellate border cursor-pointer"
           v-for="(theme, index) in themecolors.themes"
           :key="index"
+          class="color-pellate cursor-pointer border border-light"
           :style="`background-color:${theme.colors.navbar_bg_color};`"
           @click="ChangeColors('--body-bg-color', theme.colors)"
         />
       </div>
     </div>
-    <div class="border-bottom border-bottom-dashed pb-3 mb-4">
-      <h4 class="mb-1 sidebar-theme-heading">Font Styles</h4>
-      <p class="mb-0 small text-muted">
-        It allows you to specify a variety of fonts
+    <div class="border-bottom-dashed border-bottom pt-4">
+      <h4 class="theme-name-heading">Body Background Color</h4>
+      <p class="theme-description text-muted">
+        This will change the body backgound color only
       </p>
-      <div class="mt-2">
+      <div class="my-3 d-flex flex-wrap">
         <div
-          class="mb-1 cursor-pointer"
-          v-for="(font, index) in fonts"
-          :key="index"
-          @click="
-            AppendFontURL(font.url);
-            ChangeColors('boy_font_family', font.boy_font_family);
-          "
-        >
-          {{ font.name }}
-        </div>
-      </div>
-    </div>
-    <div class="border-bottom border-bottom-dashed pb-2 mb-3">
-      <div class="mb-2 pb-1">
-        <h4 class="mb-1 sidebar-theme-heading">Base Font size</h4>
-        <p class="mb-0 small text-muted">
-          This will increase or decrease the base font size as per the value
-        </p>
-      </div>
-      <div class="w-100">
-        <b-form-input
-          v-model="basefontsize"
-          type="range"
-          min="12"
-          max="25"
-          @input="ChangeColors('body_base_font_size', basefontsize + 'px')"
-        />
-      </div>
-    </div>
-
-    <div class="border-bottom border-bottom-dashed pb-2 mb-3">
-      <h4 class="mb-1 sidebar-theme-heading">Menu Color</h4>
-      <div class="d-flex align-items-center flex-wrap mt-3">
-        <div
-          class="color-pellate border cursor-pointer"
           v-for="(theme, index) in themecolors.themes"
           :key="index"
-          :style="`background-color:${theme.colors.navbar_bg_color};`"
-          @click="ChangeColors('navbar_bg_color', theme.colors.navbar_bg_color)"
-        />
-      </div>
-    </div>
-    <div class="border-bottom border-bottom-dashed pb-2 mb-3">
-      <h4 class="mb-1 sidebar-theme-heading">Body Color</h4>
-      <div class="d-flex align-items-center flex-wrap mt-3">
-        <div
-          class="color-pellate border cursor-pointer"
-          v-for="(theme, index) in themecolors.themes"
-          :key="index"
+          class="color-pellate cursor-pointer border"
           :style="`background-color:${theme.colors.body_bg_color};`"
-          @click="ChangeColors('body_bg_color', theme.colors.body_bg_color)"
+          :class="
+            selectedbg == theme.colors.body_bg_color
+              ? 'border-dark'
+              : 'border-light'
+          "
+          @click="
+            ChangeColors(
+              'body-bg-color',
+              theme.colors.body_bg_color,
+              'selectedbg'
+            )
+          "
         />
       </div>
     </div>
-    <div class="border-bottom border-bottom-dashed pb-2 mb-3">
-      <h4 class="mb-1 sidebar-theme-heading">Border radious</h4>
+    <div class="border-bottom-dashed border-bottom pt-4">
+      <h4 class="theme-name-heading">Menu Background Color</h4>
+      <p class="theme-description text-muted">
+        This will change the menu background color only
+      </p>
+      <div class="my-3 d-flex flex-wrap">
+        <div
+          v-for="(theme, index) in themecolors.themes"
+          :key="index"
+          :class="
+            navbarbg == theme.colors.navbar_bg_color
+              ? 'border-dark'
+              : 'border-light'
+          "
+          class="color-pellate cursor-pointer border"
+          :style="`background-color:${theme.colors.navbar_bg_color};`"
+          @click="
+            ChangeColors(
+              '--navbar-bg-color',
+              {
+                'navbar-text-color': theme.colors.navbar_text_color,
+                'navbar-bg-color': theme.colors.navbar_bg_color,
+              },
+              'navbarbg'
+            )
+          "
+        />
+      </div>
     </div>
-    <div class="border-bottom border-bottom-dashed pb-2 mb-3">
-      <h4 class="mb-1 sidebar-theme-heading">Menu Placement</h4>
+    <div class="border-bottom-dashed border-bottom pt-4">
+      <h4 class="theme-name-heading">Font styles</h4>
+      <p class="theme-description text-muted">
+        This will change displaying of text font changes only
+      </p>
+      <div class="my-3 d-flex flex-wrap">
+        <b-row class="px-2">
+          <b-col
+            md="6"
+            class="px-2 mb-2"
+            v-for="(font, index) in fonts"
+            :key="index"
+            @click="
+              ChangeColors(
+                'body-font-family',
+                font.body_font_family,
+                'selectedfont'
+              )
+            "
+          >
+            <div
+              class="cursor-pointer rounded-1 border text-center p-1 text-truncate"
+              :style="`font-family:${font.body_font_family}`"
+            >
+              {{ font.name }}
+            </div>
+          </b-col>
+        </b-row>
+      </div>
+    </div>
+    <div class="border-bottom-dashed border-bottom py-3 d-flex">
+      <h4 class="theme-name-heading text-nowrap me-5 mb-0">Base Font size</h4>
+      <b-form-input
+        v-model="selectedBaseFontSize"
+        type="range"
+        min="5"
+        class="w-50 ms-auto"
+        max="15"
+        @input="
+          ChangeColors('body-base-font-size', selectedBaseFontSize + 'px')
+        "
+      />
+    </div>
+    <div class="border-bottom-dashed border-bottom py-3 d-flex">
+      <h4 class="theme-name-heading me-5 mb-0 text-nowrap">Corner sharpness</h4>
+      <b-form-input
+        v-model="borderradious"
+        type="range"
+        min="0"
+        class="w-50 ms-auto"
+        max="50"
+        @input="ChangeColors('body-base-border-radious', borderradious + 'px')"
+      />
+    </div>
+    <div class="d-flex justify-content-end py-4">
+      <b-button variant="dark" class="px-4" @click="SaveTheme">Save</b-button>
     </div>
   </b-sidebar>
 </template>
@@ -101,25 +146,38 @@ export default {
   name: "Themes",
   data() {
     return {
-      colorthemes: themes.themes,
       fonts: fonts.fonts,
-      basefontsize: 12 + "px",
-      baseradious: 2 + "px",
       themecolors: themes,
+      borderradious: 4,
       selectedbg: "",
       navbarbg: "",
       selectedfont: "",
       selectedtheme: "",
+      selectedBaseFontSize: 8,
     };
   },
+  mounted() {
+    var theme = localStorage.getItem("theme");
+    if (theme) {
+      console.log(theme);
+      this.setTheme(theme);
+    }
+  },
   methods: {
+    setTheme(setTheme) {
+      this.selectedbg = setTheme.selectedbg;
+      this.navbarbg = setTheme.navbarbg;
+      this.selectedfont = setTheme.selectedfont;
+      this.selectedtheme = setTheme.selectedtheme;
+      this.selectedBaseFontSize = setTheme.selectedBaseFontSize;
+    },
     ChangeColors(colorvar, colorval, active) {
       if (typeof colorval == "string") {
         return this.AddColor(`--${colorvar}`, colorval, active);
       } else {
         for (var val in colorval) {
           let colorlable = val.replaceAll("_", "-");
-          this.AddColor(`--${colorlable}`, colorval[val]);
+          this.AddColor(`--${colorlable}`, colorval[val], active);
         }
       }
     },
@@ -127,14 +185,23 @@ export default {
       let colorlable = colorvar.replaceAll("_", "-");
       this.root = document.documentElement;
       this.root.style.setProperty(colorlable, colorval);
-      if (active) return this.activeElement(active, colorval);
+      if (active) {
+        return this.activeElement(active, colorval);
+      }
     },
     activeElement(el, el_val) {
       this[el] = el_val;
     },
-    AppendFontURL(url) {
-      var fontUrl = document.getElementById("fontThemes");
-      fontUrl.href = url;
+    SaveTheme() {
+      var config = {
+        borderradious: this.borderradious,
+        selectedbg: this.selectedbg,
+        navbarbg: this.navbarbg,
+        selectedfont: this.selectedfont,
+        selectedtheme: this.selectedtheme,
+        selectedBaseFontSize: this.selectedBaseFontSize,
+      };
+      localStorage.setItem("theme", JSON.stringify(config));
     },
   },
 };

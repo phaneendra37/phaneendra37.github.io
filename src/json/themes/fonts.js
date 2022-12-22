@@ -1,24 +1,28 @@
 export default {
   fonts: [
     {
-      name: "Roboto Fonts",
-      boy_font_family: "'Roboto', sans-serif",
-      url: "https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap",
+      name: "Roboto sans",
+      body_font_family: "'Roboto', sans-serif",
     },
     {
-      name: "Poppins Fonts",
-      boy_font_family: "'Poppins', sans-serif",
-      url: "https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap",
+      name: "Poppins ",
+      body_font_family: "'Poppins', sans-serif",
     },
     {
-      name: "Mukta Fonts",
-      boy_font_family: "'Mukta', sans-serif",
-      url: "https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700&display=swap",
+      name: "Lobster Cursive",
+      body_font_family: "'Lobster', cursive",
     },
     {
-      name: "Vazirmatn",
-      boy_font_family: '"Vazirmatn", sans-serif',
-      url: "",
+      name: "Mukta Sans",
+      body_font_family: "'Mukta', sans-serif",
+    },
+    {
+      name: "Inter Sans",
+      body_font_family: "'Inter', 'sans-serif'",
+    },
+    {
+      name: "Inter Tight",
+      body_font_family: "'Inter Tight', sans-serif;",
     },
   ],
 };

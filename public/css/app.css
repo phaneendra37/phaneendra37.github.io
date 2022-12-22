@@ -1,9 +1,9 @@
 :root {
   /* For body related colors */
   --body-bg-color: #fff;
-  --body-base-font-size: 13px;
+  --body-base-font-size: 8px;
   --body-base-border-radious: 4px;
-  --boy-font-family: "Vazirmatn", sans-serif;
+  --body-font-family: "Inter", sans-serif;
   --font-family-url: "";
   --border-color: #f4f4f4;
   --text-color: #181c32;
@@ -17,10 +17,11 @@
   --navbar-text-hover-color: "";
   --navbar-text-size: "";
 }
-@import url("https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
 @import url("./icons.css");
+@import url("./font.css");
 body {
-  font-family: var(--boy-font-family) !important;
+  font-family: var(--body-font-family) !important;
   background-color: var(--body-bg-color) !important;
   direction: ltr;
   color: var(--text-color) !important;
@@ -99,7 +100,7 @@ body .b-sidebar-backdrop {
   color: #747579;
 }
 .b-sidebar-header strong {
-  font-size: calc(var(--body-base-font-size) + 4px) !important;
+  font-size: calc(var(--body-base-font-size) + 8px) !important;
   font-weight: 600;
   line-height: 20px !important;
 }
@@ -119,14 +120,14 @@ body .b-sidebar-backdrop {
 }
 .b-sidebar-body {
   background-color: var(--theme-color) !important;
-  padding: 1.2rem 1rem !important;
+  padding: 1.5rem !important;
 }
 .sidebar-theme-heading {
   font-size: calc(var(--body-base-font-size) + 3px);
 }
 .color-pellate {
-  height: 35px;
-  width: 35px;
+  height: 38px;
+  width: 38px;
   margin-bottom: 10px;
   margin-right: 10px;
   border-radius: 4px;
@@ -191,4 +192,17 @@ body .border-bottom-dashed {
   .navbar-collapse.show {
     left: 0 !important;
   }
+}
+.theme-description {
+  font-size: calc(var(--body-base-font-size) + 5px);
+  margin-bottom: 0px !important;
+}
+.theme-name-heading {
+  font-size: calc(var(--body-base-font-size) + 6px);
+  font-weight: 600;
+  margin-bottom: 6px !important;
+}
+body .rounded-1,
+body .rounded {
+  border-radius: var(--body-base-border-radious) !important;
 }
