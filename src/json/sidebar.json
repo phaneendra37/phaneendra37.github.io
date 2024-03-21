@@ -1,0 +1,23 @@
+{
+    "sidebar": {
+        "isSlideOver": true,
+        "mainClass": "main-phaneendra",
+        "heading": "phaneendra",
+        "subHeading": "This is the subHeading of",
+        "headingClass": "heading-phaneendra",
+        "isHeader": true,
+        "isHeaderClose": true,
+        "bodyClass": "p-4 body-phaneendra",
+        "footerClass": "footer-phaneendra",
+        "confirmLabels": [
+            "Save",
+            "Saving",
+            "Saved"
+        ],
+        "saveBtnClass": "save-btn",
+        "cancelBtnClass": "cancel-btn",
+        "isSaveBtn": true,
+        "isCancelBtn": true,
+        "isBackDrop": true
+    }
+}
