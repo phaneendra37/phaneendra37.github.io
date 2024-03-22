@@ -50,7 +50,7 @@
             as="div"
             :class="{
               [size]: true,
-              'pointer-events-auto relative w-screen': isSlideOver,
+              'pointer-events-auto relative ': isSlideOver,
               'transform overflow-hidden shadow-xl transition-all rounded-xl':
                 !isSlideOver,
             }"
